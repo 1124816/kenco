@@ -9497,45 +9497,6 @@ var App = _react2.default.createClass({
       ),
       _react2.default.createElement(
         'div',
-        { id: 'div1' },
-        _react2.default.createElement(
-          'p',
-          null,
-          'Set time'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Manual Start'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Manual Stop'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Reset'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Done'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Load'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Unload'
-        )
-      ),
-      _react2.default.createElement(
-        'div',
         { id: 'door2' },
         _react2.default.createElement(
           'h2',
@@ -9546,45 +9507,6 @@ var App = _react2.default.createClass({
           'h3',
           null,
           '32:12'
-        )
-      ),
-      _react2.default.createElement(
-        'div',
-        { id: 'div2' },
-        _react2.default.createElement(
-          'p',
-          null,
-          'Set time'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Manual Start'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Manual Stop'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Reset'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Done'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Load'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Unload'
         )
       ),
       _react2.default.createElement(
@@ -9603,41 +9525,128 @@ var App = _react2.default.createClass({
       ),
       _react2.default.createElement(
         'div',
-        { id: 'div3' },
+        { id: 'door4' },
         _react2.default.createElement(
-          'p',
+          'h2',
           null,
-          'Set time'
+          '4'
         ),
         _react2.default.createElement(
-          'p',
+          'h3',
           null,
-          'Manual Start'
+          '32:12'
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { id: 'door5' },
+        _react2.default.createElement(
+          'h2',
+          null,
+          '5'
         ),
         _react2.default.createElement(
-          'p',
+          'h3',
           null,
-          'Manual Stop'
+          '32:12'
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { id: 'door6' },
+        _react2.default.createElement(
+          'h2',
+          null,
+          '6'
         ),
         _react2.default.createElement(
-          'p',
+          'h3',
           null,
-          'Reset'
+          '32:12'
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { id: 'door7' },
+        _react2.default.createElement(
+          'h2',
+          null,
+          '7'
         ),
         _react2.default.createElement(
-          'p',
+          'h3',
           null,
-          'Done'
+          '32:12'
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { id: 'door8' },
+        _react2.default.createElement(
+          'h2',
+          null,
+          '8'
         ),
         _react2.default.createElement(
-          'p',
+          'h3',
           null,
-          'Load'
+          '32:12'
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { id: 'door9' },
+        _react2.default.createElement(
+          'h2',
+          null,
+          '9'
         ),
         _react2.default.createElement(
-          'p',
+          'h3',
           null,
-          'Unload'
+          '32:12'
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { id: 'door10' },
+        _react2.default.createElement(
+          'h2',
+          null,
+          '10'
+        ),
+        _react2.default.createElement(
+          'h3',
+          null,
+          '32:12'
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { id: 'door11' },
+        _react2.default.createElement(
+          'h2',
+          null,
+          '11'
+        ),
+        _react2.default.createElement(
+          'h3',
+          null,
+          '32:12'
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { id: 'door12' },
+        _react2.default.createElement(
+          'h2',
+          null,
+          '12'
+        ),
+        _react2.default.createElement(
+          'h3',
+          null,
+          '32:12'
         )
       )
     );
@@ -21974,7 +21983,7 @@ exports = module.exports = __webpack_require__(82)();
 
 
 // module
-exports.push([module.i, "#div1 {\n  position: absolute; left: 13.75%; top: 50%;\n  text-align: center;\n  width: 15%;\n}\n\n#div2 {\n  position: absolute; left: 42.5%; top: 50%;\n  text-align: center;\n  width: 15%;\n}\n\n#div3 {\n  position: absolute; left: 71.25%; top: 50%;\n  text-align: center;\n  width: 15%;\n}\n\n#door1 {\n  text-align: center;\n  position: absolute; left: 13.75%; top: 5%;\n  width: 15%;\n  height: 35%;\n  background-color: green;\n}\n\n#door2 {\n  text-align: center;\n  position: absolute; left: 42.5%; top: 5%;\n  width: 15%;\n  height: 35%;\n  background-color: green;\n}\n\n#door3 {\n  text-align: center;\n  position: absolute; left: 71.25%; top: 5%;\n  width: 15%;\n  height: 35%;\n  background-color: green;\n}\n\nh3 {\n  margin: 50px;\n}\n", ""]);
+exports.push([module.i, "#door1 {\n  text-align: center;\n  position: absolute; left: 7.5%; top: 5%;\n  width: 10%;\n  height: 25%;\n  background-color: green;\n}\n\n#door2 {\n  text-align: center;\n  position: absolute; left: 22.5%; top: 5%;\n  width: 10%;\n  height: 25%;\n  background-color: green;\n}\n\n#door3 {\n  text-align: center;\n  position: absolute; left: 37.5%; top: 5%;\n  width: 10%;\n  height: 25%;\n  background-color: green;\n}\n\n#door4 {\n  text-align: center;\n  position: absolute; left: 52.5%; top: 5%;\n  width: 10%;\n  height: 25%;\n  background-color: green;\n}\n\n#door5 {\n  text-align: center;\n  position: absolute; left: 68.5%; top: 5%;\n  width: 10%;\n  height: 25%;\n  background-color: green;\n}\n\n#door6 {\n  text-align: center;\n  position: absolute; left: 82.5%; top: 5%;\n  width: 10%;\n  height: 25%;\n  background-color: green;\n}\n\n#door7 {\n  text-align: center;\n  position: absolute; left: 7.5%; top: 35%;\n  width: 10%;\n  height: 25%;\n  background-color: green;\n}\n\n#door8 {\n  text-align: center;\n  position: absolute; left: 22.5%; top: 35%;\n  width: 10%;\n  height: 25%;\n  background-color: green;\n}\n\n#door9 {\n  text-align: center;\n  position: absolute; left: 37.5%; top: 35%;\n  width: 10%;\n  height: 25%;\n  background-color: green;\n}\n\n#door10 {\n  text-align: center;\n  position: absolute; left: 52.5%; top: 35%;\n  width: 10%;\n  height: 25%;\n  background-color: green;\n}\n\n#door11 {\n  text-align: center;\n  position: absolute; left: 68.5%; top: 35%;\n  width: 10%;\n  height: 25%;\n  background-color: green;\n}\n\n#door12 {\n  text-align: center;\n  position: absolute; left: 82.5%; top: 35%;\n  width: 10%;\n  height: 25%;\n  background-color: green;\n}\n\nh3 {\n  margin: 50px;\n}\n", ""]);
 
 // exports
 

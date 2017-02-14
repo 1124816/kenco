@@ -10,40 +10,49 @@ var App = React.createClass({
         <h2>1</h2>
         <h3>32:12</h3>
       </div>
-      <div id="div1">
-        <p>Set time</p>
-        <p>Manual Start</p>
-        <p>Manual Stop</p>
-        <p>Reset</p>
-        <p>Done</p>
-        <p>Load</p>
-        <p>Unload</p>
-      </div>
       <div id="door2">
         <h2>2</h2>
         <h3>32:12</h3>
-      </div>
-      <div id="div2">
-        <p>Set time</p>
-        <p>Manual Start</p>
-        <p>Manual Stop</p>
-        <p>Reset</p>
-        <p>Done</p>
-        <p>Load</p>
-        <p>Unload</p>
       </div>
       <div id="door3">
         <h2>3</h2>
         <h3>32:12</h3>
       </div>
-      <div id="div3">
-        <p>Set time</p>
-        <p>Manual Start</p>
-        <p>Manual Stop</p>
-        <p>Reset</p>
-        <p>Done</p>
-        <p>Load</p>
-        <p>Unload</p>
+      <div id="door4">
+        <h2>4</h2>
+        <h3>32:12</h3>
+      </div>
+      <div id="door5">
+        <h2>5</h2>
+        <h3>32:12</h3>
+      </div>
+      <div id="door6">
+        <h2>6</h2>
+        <h3>32:12</h3>
+      </div>
+      <div id="door7">
+        <h2>7</h2>
+        <h3>32:12</h3>
+      </div>
+      <div id="door8">
+        <h2>8</h2>
+        <h3>32:12</h3>
+      </div>
+      <div id="door9">
+        <h2>9</h2>
+        <h3>32:12</h3>
+      </div>
+      <div id="door10">
+        <h2>10</h2>
+        <h3>32:12</h3>
+      </div>
+      <div id="door11">
+        <h2>11</h2>
+        <h3>32:12</h3>
+      </div>
+      <div id="door12">
+        <h2>12</h2>
+        <h3>32:12</h3>
       </div>
       </div>
     );
