@@ -9489,7 +9489,7 @@ var App = _react2.default.createClass({
           null,
           '1'
         ),
-        _react2.default.createElement('h3', { id: 'timer1' })
+        _react2.default.createElement('h3', { id: 'timer1', onclick: 'timer(event)' })
       ),
       _react2.default.createElement(
         'div',
@@ -9499,7 +9499,7 @@ var App = _react2.default.createClass({
           null,
           '2'
         ),
-        _react2.default.createElement('h3', { id: 'timer2' })
+        _react2.default.createElement('h3', { id: 'timer2', onclick: 'timer(event)' })
       ),
       _react2.default.createElement(
         'div',
@@ -9509,7 +9509,7 @@ var App = _react2.default.createClass({
           null,
           '3'
         ),
-        _react2.default.createElement('h3', { id: 'timer3' })
+        _react2.default.createElement('h3', { id: 'timer3', onclick: 'timer(event)' })
       ),
       _react2.default.createElement(
         'div',
@@ -9519,7 +9519,7 @@ var App = _react2.default.createClass({
           null,
           '4'
         ),
-        _react2.default.createElement('h3', { id: 'timer4' })
+        _react2.default.createElement('h3', { id: 'timer4', onclick: 'timer(event)' })
       ),
       _react2.default.createElement(
         'div',
@@ -9529,7 +9529,7 @@ var App = _react2.default.createClass({
           null,
           '5'
         ),
-        _react2.default.createElement('h3', { id: 'timer5' })
+        _react2.default.createElement('h3', { id: 'timer5', onclick: 'timer(event)' })
       ),
       _react2.default.createElement(
         'div',
@@ -9539,7 +9539,7 @@ var App = _react2.default.createClass({
           null,
           '6'
         ),
-        _react2.default.createElement('h3', { id: 'timer6' })
+        _react2.default.createElement('h3', { id: 'timer6', onclick: 'timer(event)' })
       ),
       _react2.default.createElement(
         'div',
@@ -9549,7 +9549,7 @@ var App = _react2.default.createClass({
           null,
           '7'
         ),
-        _react2.default.createElement('h3', { id: 'timer7' })
+        _react2.default.createElement('h3', { id: 'timer7', onclick: 'timer(event)' })
       ),
       _react2.default.createElement(
         'div',
@@ -9559,7 +9559,7 @@ var App = _react2.default.createClass({
           null,
           '8'
         ),
-        _react2.default.createElement('h3', { id: 'timer8' })
+        _react2.default.createElement('h3', { id: 'timer8', onclick: 'timer(event)' })
       ),
       _react2.default.createElement(
         'div',
@@ -9569,7 +9569,7 @@ var App = _react2.default.createClass({
           null,
           '9'
         ),
-        _react2.default.createElement('h3', { id: 'timer9' })
+        _react2.default.createElement('h3', { id: 'timer9', onclick: 'timer(event)' })
       ),
       _react2.default.createElement(
         'div',
@@ -9579,7 +9579,7 @@ var App = _react2.default.createClass({
           null,
           '10'
         ),
-        _react2.default.createElement('h3', { id: 'timer10' })
+        _react2.default.createElement('h3', { id: 'timer10', onclick: 'timer(event)' })
       ),
       _react2.default.createElement(
         'div',
@@ -9589,7 +9589,7 @@ var App = _react2.default.createClass({
           null,
           '11'
         ),
-        _react2.default.createElement('h3', { id: 'time11' })
+        _react2.default.createElement('h3', { id: 'time11', onclick: 'timer(event)' })
       ),
       _react2.default.createElement(
         'div',
@@ -9599,7 +9599,7 @@ var App = _react2.default.createClass({
           null,
           '12'
         ),
-        _react2.default.createElement('h3', { id: 'timer12' })
+        _react2.default.createElement('h3', { id: 'timer12', onclick: 'timer(event)' })
       ),
       _react2.default.createElement(
         'div',
@@ -9607,9 +9607,9 @@ var App = _react2.default.createClass({
         _react2.default.createElement(
           'h2',
           null,
-          '7'
+          '13'
         ),
-        _react2.default.createElement('h3', { id: 'timer13' })
+        _react2.default.createElement('h3', { id: 'timer13', onclick: 'timer(event)' })
       ),
       _react2.default.createElement(
         'div',
@@ -9617,9 +9617,9 @@ var App = _react2.default.createClass({
         _react2.default.createElement(
           'h2',
           null,
-          '8'
+          '14'
         ),
-        _react2.default.createElement('h3', { id: 'timer14' })
+        _react2.default.createElement('h3', { id: 'timer14', onclick: 'timer(event)' })
       ),
       _react2.default.createElement(
         'div',
@@ -9627,9 +9627,9 @@ var App = _react2.default.createClass({
         _react2.default.createElement(
           'h2',
           null,
-          '9'
+          '15'
         ),
-        _react2.default.createElement('h3', { id: 'timer15' })
+        _react2.default.createElement('h3', { id: 'timer15', onclick: 'timer(event)' })
       ),
       _react2.default.createElement(
         'div',
@@ -9637,9 +9637,9 @@ var App = _react2.default.createClass({
         _react2.default.createElement(
           'h2',
           null,
-          '10'
+          '16'
         ),
-        _react2.default.createElement('h3', { id: 'timer16' })
+        _react2.default.createElement('h3', { id: 'timer16', onclick: 'timer(event)' })
       ),
       _react2.default.createElement(
         'div',
@@ -9647,9 +9647,9 @@ var App = _react2.default.createClass({
         _react2.default.createElement(
           'h2',
           null,
-          '11'
+          '17'
         ),
-        _react2.default.createElement('h3', { id: 'timer17' })
+        _react2.default.createElement('h3', { id: 'timer17', onclick: 'timer(event)' })
       ),
       _react2.default.createElement(
         'div',
@@ -9657,9 +9657,9 @@ var App = _react2.default.createClass({
         _react2.default.createElement(
           'h2',
           null,
-          '12'
+          '18'
         ),
-        _react2.default.createElement('h3', { id: 'timer18' })
+        _react2.default.createElement('h3', { id: 'timer18', onclick: 'timer(event)' })
       )
     );
   }

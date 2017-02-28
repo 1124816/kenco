@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Kenco</title>
+    <link rel="stylesheet" type="text/css" href="App.css" />
+  </head>
+  <body style="width:100%;padding:0px;margin:0;">
+    <div id="door1" onClick="timer(this)">
+      <h2>1</h2>
+      <h3 id="timer1" >0:00</h3>
+    </div>
+    <div id="door2" onClick="timer(this)">
+      <h2>2</h2>
+      <h3 id="timer2" >0:00</h3>
+    </div>
+    <div onclick="timer(this)" id="door3">
+      <h2>3</h2>
+      <h3 id="timer3" >0:00</h3>
+    </div>
+    <div onclick="timer(this)" id="door4">
+      <h2>4</h2>
+      <h3 id="timer4" >0:00</h3>
+    </div>
+    <div onclick="timer(this)" id="door5">
+      <h2>5</h2>
+      <h3 id="timer5" >0:00</h3>
+    </div>
+    <div onclick="timer(this)" id="door6">
+      <h2>6</h2>
+      <h3 id="timer6" >0:00</h3>
+    </div>
+    <div onclick="timer(this)" id="door7">
+      <h2>7</h2>
+      <h3 id="timer7" >0:00</h3>
+    </div>
+    <div onclick="timer(this)" id="door8">
+      <h2>8</h2>
+      <h3 id="timer8" >0:00</h3>
+    </div>
+    <div onclick="timer(this)" id="door9">
+      <h2>9</h2>
+      <h3 id="timer9" >0:00</h3>
+    </div>
+    <div onclick="timer(this)" id="door10">
+      <h2>10</h2>
+      <h3 id="timer10" >0:00</h3>
+    </div>
+    <div onclick="timer(this)" id="door11">
+      <h2>11</h2>
+      <h3 id="time11" >0:00</h3>
+    </div>
+    <div onclick="timer(this)" id="door12">
+      <h2>12</h2>
+      <h3 id="timer12" >0:00</h3>
+    </div>
+    <div onclick="timer(this)" id="door13">
+      <h2>13</h2>
+      <h3 id="timer13" >0:00</h3>
+    </div>
+    <div onclick="timer(this)" id="door14">
+      <h2>14</h2>
+      <h3 id="timer14" >0:00</h3>
+    </div>
+    <div onclick="timer(this)" id="door15">
+      <h2>15</h2>
+      <h3 id="timer15" >0:00</h3>
+    </div>
+    <div onclick="timer(this)" id="door16">
+      <h2>16</h2>
+      <h3 id="timer16" >0:00</h3>
+    </div>
+    <div onclick="timer(this)" id="door17">
+      <h2>17</h2>
+      <h3 id="timer17" >0:00</h3>
+    </div>
+    <div onclick="timer(this)" id="door18">
+      <h2>18</h2>
+      <h3 id="timer18" >0:00</h3>
+    </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+  var base = [[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0]];
+  var socket = io();
+
+  var timer = function(event) {
+    document.location.href = "/data/"+event.id.slice(4,event.id.length);
+  };
+  </script>
+  </body>
+</html>

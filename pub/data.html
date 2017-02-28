@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Kenco</title>
+    <link rel="stylesheet" type="text/css" href="/data.css" />
+  </head>
+  <body style="width:100%;padding:0px;margin:0;">
+    <div id="door">
+      <h2 id="Number">1</h2>
+      <h3 id="timer1" >0:00</h3>
+    </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+  var socket = io();
+  document.getElementById('Number').innerHTML = document.location.href[document.location.href.length-1];
+  </script>
+  </body>
+</html>
