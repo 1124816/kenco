@@ -4,6 +4,8 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var path = require('path');
 
+var base = [[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0]];
+
 app.use(express.static(path.join(__dirname, '/pub')));
 
 app.get('/', function(req, res){
@@ -17,9 +19,11 @@ app.get('/data/:id', function(req, res){
 
 io.on('connection', function(socket){
   console.log('a user connected');
-  socket.on('gear', function(msg){
-  save.gear = msg;
-  console.log(save);
+  socket.emit('load', base);
+  socket.on('time', function(msg){
+  console.log(msg);
+  base[msg[0]-1][1] = msg[1];
+  base[msg[0]-1][0] = 1
   });
   socket.on('disconnect', function(){
   console.log('user disconnected');

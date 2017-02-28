@@ -7,12 +7,38 @@
   <body style="width:100%;padding:0px;margin:0;">
     <div id="door">
       <h2 id="Number">1</h2>
-      <h3 id="timer1" >0:00</h3>
+      <h3 id="timer1" onClick="timer()">0.0</h3>
     </div>
   <script src="/socket.io/socket.io.js"></script>
   <script>
   var socket = io();
+
+  socket.on('load',function(msg) {
+	console.log(msg);
+  });
+
+
   document.getElementById('Number').innerHTML = document.location.href[document.location.href.length-1];
+  var timers = document.getElementById('timer1');
+
+  var time = 0;
+  var elapsed = '0.0';
+
+
+  var timer = function() {
+    socket.emit("time", [document.location.href[document.location.href.length-1], new Date().getTime()]);
+    console.log("lolz");
+    window.setInterval(function() {
+        time += 100;
+
+        elapsed = Math.floor(time / 100) / 10;
+        if(Math.round(elapsed) == elapsed) { elapsed += '.0'; }
+
+        timers.innerHTML = elapsed;
+        //console.log(timers.innerHTML);
+    }, 100);
+  };
+
   </script>
   </body>
 </html>
