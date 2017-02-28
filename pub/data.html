@@ -12,31 +12,56 @@
   <script src="/socket.io/socket.io.js"></script>
   <script>
   var socket = io();
+  var base = [];
+  var number = 0;
 
   socket.on('load',function(msg) {
 	console.log(msg);
+  base = msg;
   });
 
-
-  document.getElementById('Number').innerHTML = document.location.href[document.location.href.length-1];
+  number = document.location.href[document.location.href.length-1]-1;
+  console.log(number);
+  document.getElementById('Number').innerHTML = number+1;
   var timers = document.getElementById('timer1');
 
   var time = 0;
   var elapsed = '0.0';
 
 
-  var timer = function() {
-    socket.emit("time", [document.location.href[document.location.href.length-1], new Date().getTime()]);
-    console.log("lolz");
-    window.setInterval(function() {
-        time += 100;
+  window.setTimeout(function() {
+    if(base[number][0] == 1) {
+      var time = base[number][1];
+      console.log(time);
+      window.setInterval(function() {
+        elapsed = Math.floor((new Date().getTime() - time)/1000);
+        min = Math.floor(elapsed/60);
+        hour = Math.floor(min/60);
+        elapsed = elapsed - (min*60);
+        min = min - (hour*60);
 
-        elapsed = Math.floor(time / 100) / 10;
-        if(Math.round(elapsed) == elapsed) { elapsed += '.0'; }
-
-        timers.innerHTML = elapsed;
+        timers.innerHTML = hour + ":" + min + ":" +elapsed;
         //console.log(timers.innerHTML);
-    }, 100);
+      }, 100);
+    };
+  }, 200);
+
+  var timer = function() {
+    if(base[number][0] == 0) {
+      var time = new Date().getTime();
+      socket.emit("time", [number, new Date().getTime()]);
+      console.log("lolz");
+      window.setInterval(function() {
+        elapsed = Math.floor((new Date().getTime() - time)/1000);
+        min = Math.floor(elapsed/60);
+        hour = Math.floor(min/60);
+        min = min - (hour*60);
+        elapsed = elapsed - (min*60);
+
+        timers.innerHTML = hour + ":" + min + ":" +elapsed;
+        //console.log(timers.innerHTML);
+      }, 100);
+    };
   };
 
   </script>

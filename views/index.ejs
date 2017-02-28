@@ -78,9 +78,34 @@
       <h3 id="timer18" >0:00</h3>
     </div>
   <script src="/socket.io/socket.io.js"></script>
+  <script><%= data %><%= vars %></script>
   <script>
-  var base = [[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0]];
+  var base = data;
   var socket = io();
+
+  socket.on('load',function(msg) {
+  console.log(msg);
+  //base = msg;
+  });
+
+  window.setTimeout(function() {
+    for(let i = 0;i<17;i++) {
+      console.log(parseInt(i+1));
+      if(base[i][0] == 1) {
+        var time = base[i][1];
+        console.log(time);
+        window.setInterval(function() {
+          elapsed = Math.floor((new Date().getTime() - base[i][1])/1000);
+          min = Math.floor(elapsed/60);
+          hour = Math.floor(min/60);
+          elapsed = elapsed - (min*60);
+          min = min - (hour*60);
+          document.getElementById('timer' + parseInt(i+1)).innerHTML = hour + ":" + min + ":" +elapsed;
+          //console.log(timers.innerHTML);
+        }, 100);
+      };
+    };
+  }, 1);
 
   var timer = function(event) {
     document.location.href = "/data/"+event.id.slice(4,event.id.length);

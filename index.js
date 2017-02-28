@@ -7,9 +7,17 @@ var path = require('path');
 var base = [[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0]];
 
 app.use(express.static(path.join(__dirname, '/pub')));
-
+//app.set('view engine', 'ejs');
 app.get('/', function(req, res){
-  res.sendFile('/index.html');
+  console.log("lolz");
+  stringbase = '[';
+  console.log(stringbase);
+  for(i in base) {
+    console.log(base[i].toString());
+    stringbase = stringbase + '[' + base[i].toString() + '],';
+  };
+  stringbase = stringbase + '];';
+  res.render('index.ejs', { data: 'var data =', vars: stringbase});
 });
 
 app.get('/data/:id', function(req, res){
@@ -22,8 +30,8 @@ io.on('connection', function(socket){
   socket.emit('load', base);
   socket.on('time', function(msg){
   console.log(msg);
-  base[msg[0]-1][1] = msg[1];
-  base[msg[0]-1][0] = 1
+  base[msg[0]][1] = msg[1];
+  base[msg[0]][0] = 1
   });
   socket.on('disconnect', function(){
   console.log('user disconnected');
