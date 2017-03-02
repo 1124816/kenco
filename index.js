@@ -21,7 +21,12 @@ app.get('/', function(req, res){
 });
 
 app.get('/data/:id', function(req, res){
-  res.sendFile('/data.html', { root: path.join(__dirname, '/pub') });
+  stringbase = '[';
+  for(i in base) {
+    stringbase = stringbase + '[' + base[i].toString() + '],';
+  };
+  stringbase = stringbase + '];';
+  res.render('data.ejs', { data: 'var data =', vars: stringbase});
 });
 
 
@@ -31,7 +36,14 @@ io.on('connection', function(socket){
   socket.on('time', function(msg){
   console.log(msg);
   base[msg[0]][1] = msg[1];
-  base[msg[0]][0] = 1
+  base[msg[0]][0] = 1;
+  socket.broadcast.emit('upstart', base);
+  });
+  socket.on('end', function(msg){
+  console.log(msg);
+  base[msg[0]][1] = msg[1];
+  base[msg[0]][0] = 0;
+  socket.broadcast.emit('upend', base);
   });
   socket.on('disconnect', function(){
   console.log('user disconnected');
