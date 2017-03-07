@@ -3,7 +3,6 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var path = require('path');
-
 var base = [[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0]];
 
 app.use(express.static(path.join(__dirname, '/pub')));
@@ -29,6 +28,12 @@ app.get('/data/:id', function(req, res){
   res.render('data.ejs', { data: 'var data =', vars: stringbase});
 });
 
+app.get('/input/:id', function(req, res){
+  base[req.params.id][0] = 1;
+  base[req.params.id][1] = new Date().getTime();
+  io.emit('upstart', base);
+  res.send("lolz");
+});
 
 io.on('connection', function(socket){
   console.log('a user connected');
