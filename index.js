@@ -3,10 +3,10 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var path = require('path');
-var base = [[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0],[0, 0]];
+var base = [[0, 0, 10800],[0, 0, 10800],[0, 0, 10800],[0, 0, 10800],[0, 0, 10800],[0, 0, 10800],[0, 0, 10800],[0, 0, 10800],[0, 0, 10800],[0, 0, 10800],[0, 0, 10800],[0, 0, 10800],[0, 0, 10800],[0, 0, 10800],[0, 0, 10800],[0, 0, 10800],[0, 0, 10800],[0, 0, 10800]];
 
 app.use(express.static(path.join(__dirname, '/pub')));
-//app.set('view engine', 'ejs');
+
 app.get('/', function(req, res){
   console.log("lolz");
   stringbase = '[';
@@ -31,6 +31,7 @@ app.get('/data/:id', function(req, res){
 app.get('/input/:id', function(req, res){
   base[req.params.id][0] = 1;
   base[req.params.id][1] = new Date().getTime();
+  base[req.perams.id][2] = 10800;
   io.emit('upstart', base);
   res.send("lolz");
 });
@@ -40,15 +41,23 @@ io.on('connection', function(socket){
   socket.emit('load', base);
   socket.on('time', function(msg){
   console.log(msg);
+  base[msg[0]][2] = msg[2];
   base[msg[0]][1] = msg[1];
   base[msg[0]][0] = 1;
   socket.broadcast.emit('upstart', base);
   });
   socket.on('end', function(msg){
   console.log(msg);
+  base[msg[0]][2] = msg[2];
   base[msg[0]][1] = msg[1];
   base[msg[0]][0] = 0;
   socket.broadcast.emit('upend', base);
+  });
+  socket.on('update', function(msg){
+  console.log(msg);
+  base[msg[0]][2] = msg[2];
+  base[msg[0]][1] = msg[1];
+  socket.broadcast.emit('uptime', base);
   });
   socket.on('disconnect', function(){
   console.log('user disconnected');

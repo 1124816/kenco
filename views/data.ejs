@@ -31,12 +31,14 @@
   var timechangeh = function() {
     hourstime = parseInt(document.getElementById('hour').value)*60;
     finishtime = hourstime + mintime;
+    socket.emit("update", [number, base[number][1], finishtime]);
     console.log(finishtime);
   };
 
   var timechangem = function() {
     mintime = parseInt(document.getElementById('min').value);
     finishtime = hourstime + mintime;
+    socket.emit("update", [number, base[number][1], finishtime]);
     console.log(finishtime);
   };
 
@@ -84,14 +86,14 @@
   var timer = function() {
     if(base[number][0] == 0) {
       var time = new Date().getTime();
-      socket.emit("time", [number, time]);
+      socket.emit("time", [number, time, finishtime]);
       base[number][1] = time;
       base[number][0] = 1;
       starttimer();
     } else {
       base[number][0] = 0;
       base[number][1] = new Date().getTime()
-      socket.emit("end", [number, base[number][1]]);
+      socket.emit("end", [number, base[number][1], finishtime]);
       timers.innerHTML = "0:0:0";;
       clearInterval(interval);
     };
