@@ -9,6 +9,8 @@
     <div id="door">
       <h2 id="Number">1</h2>
       <h3 id="timer1" onClick="timer()">0.0</h3>
+      <h3 id="time"></h3>
+      <button onClick="end();">End</button>
       <input type="numbers" id="hour" onKeyUp="timechangeh();"></input>
       <input type="numbers" id="min" onKeyUp="timechangem();"></input>
     </div>
@@ -21,10 +23,11 @@
   document.getElementById('Number').innerHTML = number+1;
   var timers = document.getElementById('timer1');
   var door = document.getElementById('door');
+  var realtime = document.getElementById('time');
   var interval = 0;
   var hourstime = 0;
   var mintime = 0;
-  var finishtime = 0;
+  var finishtime = 10800;
   var color = "#008000";
 
 
@@ -44,8 +47,19 @@
 
   var starttimer = function() {
     interval = window.setInterval(function() {
+      console.log(finishtime);
       elapsed = Math.floor((new Date().getTime() - base[number][1])/1000);
-      color = "#" + Math.floor(((elapsed/60)/finishtime)*128).toString(16) + Math.floor((128 - ((elapsed/60)/finishtime)*128)).toString(16) +"00";
+      color = "#" + ("00"+Math.floor(((elapsed/60)/finishtime)*128).toString(16)).slice(-2) + ("00"+Math.floor((128 - ((elapsed/60)/finishtime)*128)).toString(16)).slice(-2) +"00";
+      if((elapsed/60)/finishtime < .5) {
+        //console.log(color);
+        color = "#" + ("00" + Math.floor(((elapsed/60)/finishtime)*128).toString(16)).slice(-2) + ("00" + Math.floor((128 - ((elapsed/60)/finishtime)*128)).toString(16)).slice(-2) +"00";
+      } else if((elapsed/60)/finishtime < 1) {
+        //console.log('more');
+        color = "#FF" + ("00"+Math.floor(255-((((elapsed/60)/finishtime)-.5)*2)*255).toString(16)).slice(-2)+"00";
+      } else if((elapsed/60)/finishtime > 1) {
+        //console.log('most');
+        color = "#FF0000"
+      };
       //console.log(Math.floor(((elapsed/60)/finishtime)*128).toString(16));
       //console.log(Math.floor(128 - (((elapsed/60)/finishtime)*128)).toString(16));
       //console.log(color);
@@ -55,13 +69,16 @@
       elapsed = elapsed - (min*60);
       min = min - (hour*60);
 
+      date = new Date();
+      date.setTime(base[number][1]);
+      realtime.innerHTML = date.toLocaleTimeString();
       timers.innerHTML = hour + ":" + min + ":" +elapsed;
     }, 100);
   };
 
   if(base[number][0] == 1) {
     var time = base[number][1];
-    console.log(time);
+    //console.log(time);
     starttimer();
   };
 
@@ -78,9 +95,14 @@
   socket.on('upend',function(msg) {
     if(base[number][0] == 1 && msg[number][0] == 0) {
       timers.innerHTML = "0:0:0";
+      realtime.innerHTML = "";
       base = msg
       clearInterval(interval);
     };
+  });
+
+  socket.on('uptime',function(msg) {
+    base = msg
   });
 
   var timer = function() {
@@ -94,7 +116,9 @@
       base[number][0] = 0;
       base[number][1] = new Date().getTime()
       socket.emit("end", [number, base[number][1], finishtime]);
-      timers.innerHTML = "0:0:0";;
+      timers.innerHTML = "0:0:0";
+      door.style.background ="#008000";
+      realtime.innerHTML = "";
       clearInterval(interval);
     };
   };

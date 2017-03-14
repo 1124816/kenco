@@ -57,6 +57,7 @@ io.on('connection', function(socket){
   console.log(msg);
   base[msg[0]][2] = msg[2];
   base[msg[0]][1] = msg[1];
+  console.log(msg[2]);
   socket.broadcast.emit('uptime', base);
   });
   socket.on('disconnect', function(){
