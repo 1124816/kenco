@@ -28,13 +28,19 @@ app.get('/data/:id', function(req, res){
   res.render('data.ejs', { data: 'var data =', vars: stringbase});
 });
 
-app.get('/input/:id', function(req, res){
+app.get("/input/:id", function(req, res){
   base[req.params.id][0] = 1;
   base[req.params.id][1] = new Date().getTime();
-  base[req.perams.id][2] = 10800;
+  base[req.params.id][2] = 10800;
   io.emit('upstart', base);
   res.send("lolz");
 });
+
+app.get('/check/', function(req, res){
+  res.send(base);
+  console.log("check");
+});
+
 
 io.on('connection', function(socket){
   console.log('a user connected');
